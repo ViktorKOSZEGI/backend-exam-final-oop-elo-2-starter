@@ -23,11 +23,7 @@ class Farm {
     }
 
     public void butcher(Butcher butcher) {
-        for (Animal animal : animals) {
-            if (animal.getSize() > 4) {
-                animals.remove(animal);
-            }
-        }
+        animals.removeIf(Butcher::canButcher);
     }
 
     public boolean isEmpty() {
